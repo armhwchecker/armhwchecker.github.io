@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARM Business School · Homework</title>
+<meta name="description" content="ARM Business School homework portal.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23FFD24A'/><text x='32' y='45' font-size='36' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23000'>A</text></svg>">
+<style>
+  html,body{margin:0;height:100%;background:#000;color:#fff;overflow:hidden;
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+  iframe{border:0;width:100%;height:100%;display:block}
+  #wait{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px;z-index:2;background:#000}
+  #wait .m{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;margin:0 auto 18px;
+    background:#FFD24A;color:#000;font-weight:700;font-size:24px;font-family:Georgia,serif}
+  #wait h1{font-size:18px;font-weight:600;margin:0 0 8px;letter-spacing:-.01em}
+  #wait p{color:#C2C2C2;font-size:14px;margin:0;line-height:1.6}
+  #wait a{color:#FFD24A}
+  #wait .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#FFD24A;margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<!--
+  ===================================================================
+  ARM Business School — the short address for the homework portal
+  ===================================================================
+
+  This one file is the whole site. Put it on GitHub Pages and students
+  reach the portal at your own address instead of Google's long link.
+
+  BEFORE YOU UPLOAD IT, do these two things:
+
+  1. Below, paste YOUR portal link into APP. It is the /exec link with
+     ?p=student on the end. You will find it in the dashboard under
+     Student portal, next to "The link to give students".
+
+  2. In the dashboard, open Student portal -> A short web address, and
+     switch ON "Let this portal be shown inside another website". Save.
+     Google will not allow the portal inside this page until you do.
+
+  If anything goes wrong — Google refuses, the network is slow, an old
+  phone browser — this page quietly sends the student to the real link
+  after four seconds. Nobody is ever left looking at a blank screen.
+  ===================================================================
+-->
+
+<script>
+  var APP = "https://script.google.com/macros/s/AKfycbya56V2Rc7ZYzz2QNeis3ajD9fBjRWZiDTaXQIodJ_s9NOla9qxzBKoMoYre7VV6FTmPQ/exec?p=student";
+</script>
+
+<div id="wait">
+  <div>
+    <div class="m">A</div>
+    <div class="eyebrow">ARM Business School</div>
+    <h1>Opening the homework portal…</h1>
+    <p>This takes a moment the first time.<br><a id="direct" href="#">Tap here if nothing appears.</a></p>
+  </div>
+</div>
+
+<iframe id="app" title="ARM Business School homework portal"
+        allow="clipboard-write"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<script>
+  (function () {
+    var frame = document.getElementById('app');
+    var wait  = document.getElementById('wait');
+    var done  = false;
+
+    document.getElementById('direct').href = APP;
+
+    frame.addEventListener('load', function () {
+      done = true;
+      wait.style.display = 'none';
+    });
+
+    frame.src = APP;
+
+    // If Google will not be framed, the iframe never fires load. Rather than
+    // leave the student staring at nothing, hand them to the real link.
+    setTimeout(function () { if (!done) location.replace(APP); }, 4000);
+  })();
+</script>
+
+</body>
+</html>
