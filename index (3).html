@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARM Business School · Homework</title>
+<meta name="description" content="ARM Business School homework portal.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23FFD24A'/><text x='32' y='45' font-size='36' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23000'>A</text></svg>">
+
+<!--
+  ===================================================================
+  ARM Business School — the short address for the homework portal
+                                                   FINAL · 6 Oct 2026
+  ===================================================================
+
+  Students type armhwchecker.github.io and land on the portal.
+
+  IF YOU SEE "script.google.com refused to connect", AN OLDER COPY
+  OF THIS FILE IS STILL IN THE REPOSITORY. That older copy tried to
+  hold the portal inside a frame on this page. Google refuses
+  to appear inside anyone else's site, so the frame comes back empty
+  with exactly that message. Replacing index.html with this file
+  fixes it; there is no setting to turn on.
+
+  WHY IT FORWARDS INSTEAD OF HOLDING THE PORTAL INSIDE ITSELF:
+  We tried that. Apps Script runs its own page inside a further
+  frame of Google's, on a different Google domain, and that inner
+  layer refuses to be held inside anyone else's site. No setting,
+  no paid plan and no custom domain changes it. Forwarding always
+  works, so forwarding is what this does.
+
+  THE ONLY LINE THAT EVER NEEDS CHANGING is APP below, and only if
+  you create a brand new Apps Script deployment. Deploy -> New
+  version keeps the same link, so day to day you never touch this.
+  ===================================================================
+-->
+
+<script>
+  var APP = "https://script.google.com/macros/s/AKfycbya56V2Rc7ZYzz2QNeis3ajD9fBjRWZiDTaXQIodJ_s9NOla9qxzBKoMoYre7VV6FTmPQ/exec?p=student";
+  // replace() keeps this page out of the back button, so Back takes the
+  // student where they came from instead of looping through here again.
+  try { location.replace(APP); } catch (e) { location.href = APP; }
+  // The browser inside WhatsApp, Instagram and a few others sometimes ignores
+  // replace(). If we are somehow still here a moment later, go the plain way.
+  setTimeout(function () { if (!document.hidden) location.href = APP; }, 2500);
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbya56V2Rc7ZYzz2QNeis3ajD9fBjRWZiDTaXQIodJ_s9NOla9qxzBKoMoYre7VV6FTmPQ/exec?p=student"></noscript>
+
+<style>
+  html,body{margin:0;height:100%;background:#000;color:#fff;
+    font-family:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
+  .wrap{position:fixed;inset:0;display:grid;place-items:center;text-align:center;padding:24px}
+  .m{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;margin:0 auto 18px;
+    background:#FFD24A;color:#000;font-weight:700;font-size:25px;font-family:Georgia,serif}
+  .eyebrow{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#FFD24A;margin-bottom:12px}
+  h1{font-size:18px;font-weight:600;margin:0 0 10px;letter-spacing:-.01em}
+  p{color:#C2C2C2;font-size:14px;margin:0;line-height:1.6}
+  a{color:#FFD24A}
+  .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#FFD24A;margin:0 3px;
+    animation:b 1.2s ease-in-out infinite}
+  .dot:nth-child(2){animation-delay:.15s} .dot:nth-child(3){animation-delay:.3s}
+  @keyframes b{0%,80%,100%{opacity:.25}40%{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.dot{animation:none;opacity:.7}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div>
+      <div class="m">A</div>
+      <div class="eyebrow">ARM Business School</div>
+      <h1>Taking you to your homework</h1>
+      <p><span class="dot"></span><span class="dot"></span><span class="dot"></span></p>
+      <p style="margin-top:14px">Not moving? <a href="https://script.google.com/macros/s/AKfycbya56V2Rc7ZYzz2QNeis3ajD9fBjRWZiDTaXQIodJ_s9NOla9qxzBKoMoYre7VV6FTmPQ/exec?p=student">Tap here.</a></p>
+    </div>
+  </div>
+</body>
+</html>
